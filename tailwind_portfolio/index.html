@@ -23,8 +23,21 @@
       >
     </a>
 
+    <!-- Burger button -->
+    <!-- md:hidden = hidden on medium screens and larger -->
+    <button
+      id="menu-button"
+      class="ml-auto text-2xl text-white md:hidden"
+      aria-label="Open navigation menu"
+    >
+      ☰
+    </button>
+
     <!-- Navigation links -->
-    <div class="ml-4 flex gap-4">
+    <div
+      id="menu"
+      class="absolute left-0 top-full hidden w-full flex-col gap-4 bg-[#212529] px-4 py-4 md:static md:flex md:w-auto md:flex-row md:bg-transparent md:p-0 md:ml-4"
+    >
 
       <a
         href="#introduction"
@@ -55,7 +68,7 @@
 
 
 <!-- Introduction -->
-<section id="introduction" class="bg-[#212529] py-20 text-white">
+<section id="introduction" class="bg-[#212529] py-36 text-white">
 
   <div class="mx-auto max-w-7xl px-4">
 
