@@ -1,0 +1,36 @@
+@use "bulma/sass" with (
+  $text: #212529,
+  $text-strong: #212529,
+  $dark: #212529,
+  $light: #f8f9fa
+);
+
+.title {
+  color: #212529;
+}
+
+#about p {
+  color: #212529;
+}
+
+#about strong {
+  color: #212529;
+}
+
+#introduction {
+  padding-top: 7rem;
+  padding-bottom: 8rem;
+}
+
+img {
+  border-radius: 2%;
+}
+#about .button.is-dark.is-outlined:hover {
+  background-color: #212529;
+  color: #fff;
+  border-color: #212529;
+}
+
+.navbar-burger {
+  color: #fff;
+}

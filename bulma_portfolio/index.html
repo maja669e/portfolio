@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Portfolio</title>
+
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+ <!-- Navbar -->
+<nav class="is-fixed-top navbar is-dark" role="navigation" aria-label="main navigation">
+
+  <div class="navbar-brand">
+
+    <a class="navbar-item">
+      <img
+        src="assets/capylogo.png"
+        alt="Capybara logo"
+        height="90"
+        width="55"
+      >
+    </a>
+
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="mainNavbar"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+
+  </div>
+
+  <div id="mainNavbar" class="navbar-menu">
+
+    <div class="navbar-start">
+
+      <a class="navbar-item" href="#introduction">
+        Introduction
+      </a>
+
+      <a class="navbar-item" href="#about">
+        About me
+      </a>
+
+      <a class="navbar-item" href="#contact">
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+ <!-- Introduction -->
+<section id="introduction"  class="section has-background-dark has-text-white">
+  <div class="container py-5">
+
+    <div class="columns is-vcentered">
+
+      <!-- Welcome text -->
+      <div class="column is-two-thirds">
+
+        <p class="is-uppercase has-text-weight-bold">
+          Hello, I'm Maja
+        </p>
+
+        <h1 class="title is-1 has-text-white">
+          Welcome to<br>
+          My Portfolio
+        </h1>
+
+        <p class="is-size-5 mt-5">
+          I'm a web development student who enjoys creating
+          websites and applications.
+        </p>
+
+      </div>
+
+      <!-- Skills card -->
+      <div class="column">
+
+        <div class="card has-background-light">
+          <div class="card-content">
+
+            <h3 class="title is-4">
+              What I do
+            </h3>
+
+            <p class="mb-4 has-text-dark">
+              I work with frontend and backend development
+              and enjoy learning new technologies.
+            </p>
+
+            <span class="tag is-dark">HTML</span>
+            <span class="tag is-dark">CSS</span>
+            <span class="tag is-dark">JavaScript</span>
+            <span class="tag is-dark">Java</span>
+            <span class="tag is-dark">PHP</span>
+            <span class="tag is-dark">Python</span>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- About Me -->
+<section id="about" class="section has-background-light">
+  <div class="container">
+
+    <div class="columns is-vcentered">
+
+      <!-- Text -->
+      <div class="column is-half">
+
+        <h2 class="title is-2">
+          About Me
+        </h2>
+
+        <p>
+          I am a web development student with a passion for creating
+          user-friendly and visually appealing websites. I enjoy
+          learning new technologies and improving my skills in both
+          frontend and backend development.
+        </p>
+
+        <div class="mt-5">
+
+          <p class="mb-2">
+            <strong>Want to see what I'm working on?</strong>
+          </p>
+
+          <a
+            href="https://github.com/maja669e"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button is-dark is-outlined"
+          >
+            GitHub →
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- Image -->
+      <div class="column is-half has-text-centered">
+
+        <img
+          src="assets/capy.png"
+          class="image is-inline-block image"
+          alt="Capybara illustration"
+          width="350"
+          height="350"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section has-background-dark has-text-white">
+  <div class="container">
+
+    <div class="columns is-vcentered">
+
+      <!-- Image -->
+      <div class="column is-half has-text-centered">
+
+        <img
+          src="assets/capycall.png"
+          class="image is-inline-block"
+          alt="Capybara illustration making a phone call"
+          width="350"
+          height="350"
+        >
+
+      </div>
+
+      <!-- Text -->
+      <div class="column is-half">
+
+        <h2 class="title is-2 has-text-white">
+          Contact
+        </h2>
+
+        <p>
+          Let's get in touch! If you have any questions,
+          please contact me via the following:
+        </p>
+
+        <!-- Email -->
+        <h5 class="title is-5 has-text-white mt-5">
+          Email
+        </h5>
+
+        <p>
+          <a
+            href="mailto:maja.bijedic@live.dk"
+            class="has-text-white"
+          >
+            maja.bijedic@live.dk
+          </a>
+        </p>
+
+        <!-- Phone -->
+        <h5 class="title is-5 has-text-white mt-5">
+          Phone
+        </h5>
+
+        <p>
+          <a
+            href="tel:+4560606113"
+            class="has-text-white"
+          >
+            +45 60 60 61 13
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="has-background-dark has-text-centered py-4">
+
+  <p class="has-text-white-ter is-size-7 is-italic">
+    &copy; <span id="year"></span> Maja Bijedic. All rights reserved.
+  </p>
+
+</footer>
+
+<script>
+  const burger = document.querySelector(".navbar-burger");
+  const menu = document.getElementById("mainNavbar");
+
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("is-active");
+    menu.classList.toggle("is-active");
+
+    const isActive = burger.classList.contains("is-active");
+
+    burger.setAttribute("aria-expanded", isActive);
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <title>Portfolio</title>
+</head>
+<body>
+
+<section id="navbar">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top px-2">
+  <a class="navbar-brand">
+    <img 
+                    src="assets/capylogo.png"
+                    class="img-fluid"
+                    alt="Capybara logo"
+                    height="50" width="50"
+                >
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#introduction">Introduction</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#about">About me</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+</section>
+
+
+<section id="introduction" class="py-5 bg-dark text-white">
+
+    <div class="container py-5">
+
+        <div class="row align-items-center">
+
+            <!-- Welcome text -->
+            <div class="col-md-8">
+
+                <p class="text-uppercase fw-bold">
+                    Hello, I'm Maja
+                </p>
+
+                <h1 class="display-1 fw-bold">
+                    Welcome to<br>
+                    My Portfolio
+                </h1>
+
+                <p class="lead mt-4">
+                    I'm a web development student who enjoys creating
+                    websites and applications.
+                </p>
+
+    
+
+            </div>
+
+            <!-- Small introduction card -->
+            <div class="col-md-4 mt-5 mt-md-0">
+
+                <div class="card text-dark shadow">
+
+                    <div class="card-body p-4">
+
+                        <h3 class="card-title">
+                            What I do
+                        </h3>
+
+                        <p class="card-text">
+                            I work with frontend and backend
+                            development and enjoy learning
+                            new technologies.
+                        </p>
+
+                        <span class="badge text-bg-secondary">
+                            HTML
+                        </span>
+
+                        <span class="badge text-bg-secondary">
+                            CSS
+                        </span>
+
+                        <span class="badge text-bg-secondary">
+                            JavaScript
+                        </span>
+                        <span class="badge text-bg-secondary">
+                            Java
+                        </span>
+                        <span class="badge text-bg-secondary">
+                            PHP
+                        </span>
+                        <span class="badge text-bg-secondary">
+                            Python
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="about" class="py-5 bg-light">
+
+    <div class="container py-4">
+
+        <div class="row align-items-center">
+
+            <!-- Text -->
+            <div class="col-md-6">
+                <h2>About Me</h2>
+
+                <p>
+                    I am a web development student with a passion for creating
+                    user-friendly and visually appealing websites. I enjoy
+                    learning new technologies and improving my skills in both
+                    frontend and backend development.
+                </p>
+
+                <div class="mt-4">
+        <p class="mb-2">
+            <strong>Want to see what I'm working on?</strong>
+        </p>
+
+        <a 
+            href="https://github.com/maja669e"
+            target="_blank"
+            class="btn btn-outline-dark"
+        >
+            GitHub →
+        </a>
+    </div>
+            </div>
+
+            <!-- Image -->
+            <div class="col-md-4 mt-5 mt-md-0 ms-auto">
+                <img 
+                    src="assets/capy.png"
+                    class="img-fluid rounded"
+                    alt="Capybara being interviewed"
+                    height="350" width="350"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" class="py-5 bg-dark text-white">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- Image -->
+            <div class="col-md-4 mt-5 mt-md-0">
+                <img 
+                    src="assets/capycall.png"
+                    class="img-fluid rounded"
+                    alt="Capybara on a call"
+                    height="350" width="350"
+                >
+            </div>
+
+            <!-- Text -->
+            <div class="col-md-6 ms-auto mt-5 mt-md-0">
+                <h2>Contact</h2>
+
+                <p>
+                    Let's get in touch! If you have any questions, please contact me via following:
+                </p>
+
+                 <!-- Email -->
+    <h5 class="mt-4">Email</h5>
+    <p>
+        <a href="mailto:maja.bijedic@live.dk" class="text-white-50">
+            maja.bijedic@live.dk
+        </a>
+    </p>
+
+    <!-- Phone -->
+    <h5 class="mt-3">Phone</h5>
+    <p>
+        <a href="tel:+4560606113" class="text-white-50">
+            +45 60 60 61 13
+        </a>
+    </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <footer class="py-3 bg-dark text-center">
+        <p class="mb-0 text-white-50 fst-italic  small">
+            &copy; <span id="year"></span> Maja Bijedic. All rights reserved.
+        </p>
+    </footer>
+
+
+<!--Bootstrap link to make burger menu work etc -->    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+</script>
+<!-- Script to make the year in the footer update automatically -->
+ <script>
+ document.getElementById("year").textContent = new Date().getFullYear();
+ </script>
+</body>
+</html>
