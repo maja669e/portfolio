@@ -1,0 +1,70 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Build Bulma + Sass
+      - name: Install Bulma dependencies
+        working-directory: ./bulma_portfolio
+        run: npm ci
+
+      - name: Build Bulma CSS
+        working-directory: ./bulma_portfolio
+        run: npm run build:css
+
+      # Build Tailwind + Vite
+      - name: Install Tailwind dependencies
+        working-directory: ./tailwind_portfolio
+        run: npm ci
+
+      - name: Build Tailwind
+        working-directory: ./tailwind_portfolio
+        run: npm run build
+
+      # Prepare files for GitHub Pages
+      - name: Prepare deployment
+        run: |
+          mkdir -p deploy/bootstrap
+          mkdir -p deploy/bulma
+          mkdir -p deploy/tailwind
+
+          cp -r bootstrap_portfolio/* deploy/bootstrap/
+          cp -r bulma_portfolio/* deploy/bulma/
+          cp -r tailwind_portfolio/dist/* deploy/tailwind/
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./deploy
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
