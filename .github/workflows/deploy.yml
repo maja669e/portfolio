@@ -59,6 +59,10 @@ jobs:
           cp -r bulma_portfolio/* deploy/bulma/
           cp -r tailwind_portfolio/dist/* deploy/tailwind/
 
+          # Show the Tailwind files that will be deployed
+          echo "=== TAILWIND DEPLOYMENT FILES ==="
+          find deploy/tailwind -type f
+
           cat > deploy/index.html <<'EOF'
           <!DOCTYPE html>
           <html lang="en">
