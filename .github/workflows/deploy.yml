@@ -57,7 +57,7 @@ jobs:
 
           cp -r bootstrap_portfolio/* deploy/bootstrap/
           cp -r bulma_portfolio/* deploy/bulma/
-          cp -r tailwind_portfolio/dist/* deploy/tailwind/
+          cp -r tailwind_portfolio/* deploy/tailwind/
 
           cat > deploy/index.html <<'EOF'
           <!DOCTYPE html>
