@@ -20,9 +20,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Get the files from the repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Install Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -57,14 +59,37 @@ jobs:
           cp -r bulma_portfolio/* deploy/bulma/
           cp -r tailwind_portfolio/dist/* deploy/tailwind/
 
+          cat > deploy/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Portfolio Framework Comparison</title>
+          </head>
+          <body>
+            <h1>Portfolio Framework Comparison</h1>
+
+            <ul>
+              <li><a href="./bootstrap/">Bootstrap</a></li>
+              <li><a href="./bulma/">Bulma + Sass</a></li>
+              <li><a href="./tailwind/">Tailwind CSS</a></li>
+            </ul>
+          </body>
+          </html>
+          EOF
+
+      # Configure GitHub Pages
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
 
+      # Upload the prepared website
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./deploy
 
+      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
